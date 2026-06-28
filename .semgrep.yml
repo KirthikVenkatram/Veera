@@ -1,0 +1,22 @@
+# Semgrep configuration for Veera.
+# Runs in CI (.github/workflows/ci.yml) and can be run locally with:
+#     semgrep --config .semgrep.yml
+#
+# We rely on Semgrep's hosted rulesets — p/swift catches common Swift mistakes,
+# p/security-audit covers cross-language patterns like hard-coded secrets and
+# unsafe deserialization. Veera ships no networked code today, so most rules
+# are zero-finding guardrails for now.
+rules: []
+
+# Hosted rule packs — Semgrep pulls these at run time.
+include:
+  - p/swift
+  - p/security-audit
+
+# Paths the scanner should leave alone. Generated assets and build output
+# don't need security review.
+paths:
+  exclude:
+    - "veera/Assets.xcassets"
+    - "tools/iconmaker.swift"
+    - "*.xcodeproj"

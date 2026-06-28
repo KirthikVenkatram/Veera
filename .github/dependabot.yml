@@ -1,0 +1,27 @@
+version: 2
+updates:
+  # Veera has no third-party Swift packages today; this runs as a guardrail so
+  # any future dependency drift is flagged. Weekly cadence — daily is noise for
+  # a single-developer project.
+  - package-ecosystem: "swift"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+
+  # Keep the CI workflow's actions current.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 5
+    labels:
+      - "ci"

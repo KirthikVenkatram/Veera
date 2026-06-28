@@ -1,0 +1,23 @@
+# Pre-commit hooks for Veera. Run `pre-commit install` once after cloning
+# (see docs/devsecops.md). Hooks run automatically on `git commit`.
+#
+# Veera holds no secrets today, so gitleaks runs as a guardrail against
+# accidentally pasting one in.
+
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.0
+    hooks:
+      - id: gitleaks
+        # Use the repo-local config so allowlists travel with the codebase.
+        args: ["--config", ".gitleaks.toml", "--no-banner"]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=2048"]

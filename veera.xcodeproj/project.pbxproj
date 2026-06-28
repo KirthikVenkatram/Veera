@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7218E1962FF004AD00FEE524 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 7218E1952FF004AD00FEE524 /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		7205BF152FCF61E6006FF9B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -23,10 +27,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		72A311C62FD7BDE2002293FF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7205BF052FCF61E0006FF9B6 /* veera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = veera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7205BF142FCF61E6006FF9B6 /* veeraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = veeraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7205BF1E2FCF61E6006FF9B6 /* veeraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = veeraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7218E1952FF004AD00FEE524 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		72A3118B2FD7B6EC002293FF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		72A3118D2FD7B6EC002293FF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,9 +95,11 @@
 		7205BEFC2FCF61E0006FF9B6 = {
 			isa = PBXGroup;
 			children = (
+				7218E1952FF004AD00FEE524 /* PrivacyInfo.xcprivacy */,
 				7205BF072FCF61E0006FF9B6 /* veera */,
 				7205BF172FCF61E6006FF9B6 /* veeraTests */,
 				7205BF212FCF61E6006FF9B6 /* veeraUITests */,
+				72A3118A2FD7B6EC002293FF /* Frameworks */,
 				7205BF062FCF61E0006FF9B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +114,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		72A3118A2FD7B6EC002293FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72A3118B2FD7B6EC002293FF /* WidgetKit.framework */,
+				72A3118D2FD7B6EC002293FF /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +133,7 @@
 				7205BF012FCF61E0006FF9B6 /* Sources */,
 				7205BF022FCF61E0006FF9B6 /* Frameworks */,
 				7205BF032FCF61E0006FF9B6 /* Resources */,
+				72A311C62FD7BDE2002293FF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -171,7 +203,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2650;
-				LastUpgradeCheck = 2650;
+				LastUpgradeCheck = 2660;
 				TargetAttributes = {
 					7205BF042FCF61E0006FF9B6 = {
 						CreatedOnToolsVersion = 26.5;
@@ -212,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7218E1962FF004AD00FEE524 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +337,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = K6PPKM9WF9;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -321,12 +355,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = Veera;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -367,6 +403,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = K6PPKM9WF9;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -378,11 +415,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_KEY_CFBundleDisplayName[sdk=*]" = Veera;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -393,10 +432,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = veera/veera.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Veera;
+				INFOPLIST_KEY_ITS = NO;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Veera mirrors task deadlines into your Calendar when you enable it in Settings.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Veera reads daily totals — steps, sleep, mindfulness, workouts — to grant XP automatically.";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Veera mirrors habit reminders into your Reminders list when you enable it in Settings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,10 +469,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = veera/veera.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Veera;
+				INFOPLIST_KEY_ITS = NO;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Veera mirrors task deadlines into your Calendar when you enable it in Settings.";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Veera reads daily totals — steps, sleep, mindfulness, workouts — to grant XP automatically.";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "Veera mirrors habit reminders into your Reminders list when you enable it in Settings.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -475,6 +527,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

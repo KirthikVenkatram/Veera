@@ -1,0 +1,28 @@
+# Veera gitleaks configuration.
+# Veera ships no API keys, tokens, or credentials of any kind today — this
+# scanner is a guardrail against accidentally pasting one in. It runs both as
+# a pre-commit hook (see `.pre-commit-config.yaml`) and via CI workflow.
+#
+# We extend the default ruleset rather than redefining it; only allowlists
+# need to live here.
+
+title = "Veera gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Veera allowlist — expected high-entropy strings that aren't secrets."
+paths = [
+    # Generated app icon PNGs — encoded image bytes regularly trip false positives.
+    "veera/Assets.xcassets/AppIcon.appiconset/.*\\.png",
+    # Programmatic icon renderer; uses hex colour constants that look key-ish.
+    "tools/iconmaker.swift",
+]
+# Allow bundle identifiers, hex colour codes, and SwiftUI/SwiftData macros that
+# can be flagged as "high entropy" by the generic ruleset.
+regexes = [
+    '''com\.kv\.veera''',
+    '''0x[0-9A-Fa-f]{6,8}''',
+    '''#[0-9A-Fa-f]{3,8}''',
+]

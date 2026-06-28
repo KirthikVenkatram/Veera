@@ -1,0 +1,59 @@
+included:
+  - veera
+  - veeraTests
+  - veeraUITests
+
+excluded:
+  - veera/Assets.xcassets
+  - veera/Products
+
+opt_in_rules:
+  - empty_count
+  - empty_string
+  - explicit_init
+  - first_where
+  - force_unwrapping
+  - implicit_return
+  - last_where
+  - prefer_self_in_static_references
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - sorted_imports
+  - toggle_bool
+
+analyzer_rules:
+  - unused_import
+
+disabled_rules:
+  # Long-form serif text + heraldic asset names make line_length noisy.
+  - line_length
+  # SwiftUI body chains commonly exceed default body length; the engines stay short.
+  - function_body_length
+  - type_body_length
+
+# Default 400 is tight for SwiftUI views that group private substructs in one file.
+# Splitting just to satisfy the count introduces friction without quality wins.
+file_length:
+  warning: 700
+  error: 900
+
+identifier_name:
+  min_length: 2
+  excluded:
+    - id
+    - to
+    - on
+    - xp
+
+# Xcode auto-generates these with the lowercase project name. Renaming requires
+# touching scheme/test-bundle references in the .xcodeproj, which is risky.
+type_name:
+  excluded:
+    - veeraApp
+    - veeraUITests
+    - veeraUITestsLaunchTests
+
+force_unwrapping:
+  severity: error
+
+reporter: "xcode"
